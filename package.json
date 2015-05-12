@@ -1,0 +1,29 @@
+{
+  "name": "react-explainer",
+  "version": "1.0.0",
+  "description": "An attempt to explain react",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iest/react-explainer.git"
+  },
+  "private": true,
+  "author": "Iestyn Williams <iest@me.com> (http://github.com/iest)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iest/react-explainer/issues"
+  },
+  "homepage": "https://github.com/iest/react-explainer",
+  "devDependencies": {
+    "babel-core": "^5.1.11",
+    "babel-loader": "^5.0.0",
+    "react-hot-loader": "^1.2.2",
+    "webpack": "^1.7.2",
+    "webpack-dev-server": "^1.7.0"
+  },
+  "dependencies": {
+    "react": "^0.13.0"
+  }
+}
