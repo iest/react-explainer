@@ -1,28 +1,36 @@
 import React from 'react';
 
-class ImgComponent extends React.Component {
+let DumbThing = React.createClass({
 
   propTypes: {
-    src: React.Proptypes.string
-  }
+    text: React.PropTypes.string,
+    size: React.PropTypes.number,
+    isRed: React.PropTypes.bool
+  },
 
   render() {
 
     const styles = {
-      backgroundImage: `url(${this.props.src})`,
-      backgroundSize: 'cover',
-      width: '10em',
-      height: '10em',
+      color: this.props.isRed ? 'red':'#333',
+      fontSize: this.props.size
     };
 
     return (
-      <div style={styles}/>
+      <div style={styles}>
+        <h3>{this.props.text}</h3>
+      </div>
     );
   }
-}
+});
 
-export default class PropsExample extends React.Component {
+export default React.createClass({
   render() {
-    return <ImgComponent src="http://placecage.com/200/200"/>
+    return (
+      <DumbThing
+        text="This is a dumb use of props"
+        size={24}
+        isRed={true}
+      />
+    );
   }
-}
+});

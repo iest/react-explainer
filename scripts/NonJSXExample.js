@@ -9,6 +9,7 @@ export default class NonJSXExample extends React.Component {
       React.createElement('p', null,
         `There's no real reason not to use JSX though...`
       ),
+      React.createElement('hr', null)
     );
   }
 }
