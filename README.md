@@ -64,12 +64,29 @@ Inside a component, `this.state` is the one thing you can mutate. But, you mutat
 
 Calling this method with some new state effectively tells React the view needs re-rendering.
 
+Sticking with the state example, lets see how we can modify the state of a component by adding some `onClick` handlers to some buttons.
 
-0. Component lifecycle
+
+5. Component lifecycle
 ----------------------
 
-0. Render to string, on a server
-------------------------
+React's component API has a few more tricks up it's sleeve. Lifecyle methods are automatically called by React through the lifetime of the component.
+
+In (general) order:
+
+- `componentWillMount`
+- `componentDidMount`
+- `componentWillRecieveProps`
+- `shouldComponentUpdate`
+- `componentWillUpdate`
+- `componentDidUpdate`
+- `componentWillUnmount`
+
+A common use case would be to set up some CSS animation inside `componentDidMount`, as this is called as soon as the component is mounted to the DOM. `componentWillMount` could call some data-fetching for example, and `componentWillUnmount` could be used to tear down some fancy event listeners you had enabled elsewhere perhaps.
+
+
+6. Render to string, on a server
+--------------------------------
 
 
 _Heavily adapted from Dan Abramov's excellent [react-hot-boilerplate](https://github.com/gaearon/react-hot-boilerplate)._

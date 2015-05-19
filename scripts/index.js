@@ -11,13 +11,33 @@ const styles = {
   font: '1em/1.5 Helvetica Neue'
 };
 
+const containerStyles = {
+  background: 'rgba(0,0,0,.02)',
+  padding: '0.5rem',
+  marginBottom: 10,
+  borderRadius: 4
+};
+
 React.render(
   <div style={styles}>
     <h1>React examples</h1>
-    <NonJSXExample/>
-    <JSXExample/>
-    <PropsExample/>
-    <StateExample onDone={alert}/>
+
+    <div style={containerStyles}>
+      <NonJSXExample/>
+    </div>
+
+    <div style={containerStyles}>
+      <JSXExample/>
+    </div>
+
+    <div style={containerStyles}>
+      <PropsExample/>
+    </div>
+
+    <div style={containerStyles}>
+      <StateExample onDone={alert}/>
+    </div>
+
   </div>
   , document.getElementById('root')
 );
