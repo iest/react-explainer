@@ -66,7 +66,7 @@ Looking at [the props example](https://github.com/iest/react-explainer/blob/mast
 
 So we know we can pass properties into out components. But how do actually make them do stuff? Take a look at [the state example](https://github.com/iest/react-explainer/blob/master/scripts/StateExample.js) for this part.
 
-Inside a component, `this.state` is the one thing you can mutate. But, you mutate it in a very specific way: using the `this.setState` method (you never mutate `this.state` directly).
+Inside a component, `this.state` is the one thing you can mutate. But, you mutate it in a very specific way: using the `this.setState()` method (you never mutate `this.state` directly).
 
 Calling this method with some new state effectively tells React the view needs re-rendering.
 
@@ -93,6 +93,19 @@ A common use case would be to set up some CSS animation inside `componentDidMoun
 
 7. Render to string, on a server
 --------------------------------
+
+The best way to think about React is as a function that accepts input and produces output. If the input is always the same, the output will also be the same.
+
+Because of this, it's possible to render react components (of any depth) out to a string. React has a couple of methods on the top-level API to facilitate this:
+
+- `React.renderToString()`
+- `React.renderToStaticMarkup()`
+
+`renderToString` will output HTML that can be picked up by react on a client, when rendering the same components (same input, same output).
+
+`renderToStaticMarkup()` will output plain HTML (without any react identifiers) which can be very useful.
+
+The concept of an _isomorphic_ JS app is a powerful one: you write code once, and it'll run on a server and in a browser in exactly the same way. There are a lot of complications involved, but the gains are potentially huge.
 
 
 _Heavily adapted from Dan Abramov's excellent [react-hot-boilerplate](https://github.com/gaearon/react-hot-boilerplate)._
