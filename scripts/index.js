@@ -4,6 +4,7 @@ import NonJSXExample from './NonJSXExample';
 import JSXExample from './JSXExample';
 import PropsExample from './PropsExample';
 import StateExample from './StateExample';
+import ReduxExample from './ReduxExample';
 
 const styles = {
   maxWidth: '50em',
@@ -36,6 +37,10 @@ React.render(
 
     <div style={containerStyles}>
       <StateExample onDone={alert}/>
+    </div>
+
+    <div style={containerStyles}>
+      <ReduxExample/>
     </div>
 
   </div>
